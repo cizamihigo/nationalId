@@ -165,26 +165,8 @@ html, body{
           height: 67px;
           position:relative;
       }
-      .navbar-brand:before{
-          position:absolute;
-          top:8%;
-          left:0%;
-          width:50px;
-          height:50px;
-          background:url(../images/1.png) no-repeat 0px 0px;
-          display:block;
-          content:'';
-      }
-      .navbar-brand:after{
-          position:absolute;
-          top:8%;
-          right:-31%;
-          width:50px;
-          height:50px;
-          background:url(../images/1.png) no-repeat 0px 0px;
-          display:block;
-          content:'';
-      }
+     
+     
       .navbar-default .navbar-nav>li>a {
           color:#b7b7b7;
           font-size:1em;
@@ -2514,26 +2496,13 @@ html, body{
       }
   }
   @media (max-width:480px){
-      .navbar-brand:before {
-          top: 23%;
-          width: 35px;
-          height: 35px;
-          background: url(../images/1.png) no-repeat 0px 0px;
-          background-size: 100%;
-      }
+      
       .navbar-brand {
           font-size: 2em;
           padding: 0.8em 0 0 2em !important;
           height: 70px;
       }
-      .navbar-brand:after {
-          top: 23%;
-          width: 35px;
-          height: 35px;
-          background: url(../images/1.png) no-repeat 0px 0px;
-          background-size: 100%;
-          right: -27%;
-      }
+     
       .content.white {
           padding: 0 !important;
       }
@@ -2781,21 +2750,8 @@ html, body{
           font-size:1.8em;
           padding: 1em 0 0 1.8em !important;
       }
-      .navbar-brand:after {
-          width: 25px;
-          height: 25px;
-          background: url(../images/1.png) no-repeat 0px 0px;
-          background-size: 100%;
-          top: 34%;
-          right: -25%;
-      }
-      .navbar-brand:before {
-          top: 34%;
-          width: 25px;
-          height: 25px;
-          background: url(../images/1.png) no-repeat 0px 0px;
-          background-size: 100%;
-      }
+     
+     
       figure.effect-layla h4 {
           padding-top:8%;
       }
