@@ -3,7 +3,7 @@
 			<nav class="navbar navbar-default" role="navigation">
 			<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -13,7 +13,7 @@
 			</div>
 			<!--/.navbar-header-->
 		
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<div class="collapse navbar-collapse" id="menu">
 				<ul class="nav navbar-nav">
 						<li class="active"><a href="index.php">Home</a></li>
 						<li><a href="#">About - us</a></li>
@@ -43,3 +43,4 @@
 			</nav>
 		</div>
 	</div>
+	<script src="js/bootstrap.js"></script>

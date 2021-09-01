@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="css/bootstrap-3.1.1.min.css">
 
 <?php
-    $pagename ="Login";
+    $pagename ="Signup";
     include_once("head.php");
     include("includes/header.php");
   
@@ -36,13 +36,13 @@
 				<div class="login100-pic js-tilt" data-tilt>
 					<img src="images/1.gif" alt="IMG" hidden="true">
 					<h3><b>Democratic Republic of the Congo</b></h3>
-					
+					<br> <br>
 					<img src="images/2.gif" alt="IMG">
 				</div>
 
 				<form class="login100-form validate-form">
 					<span class="login100-form-title">
-						Citizen Login
+						Create your account
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
@@ -63,23 +63,16 @@
 					
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Login
+							Sign up
 						</button>
 					</div>
 
-					<div class="text-center p-t-12">
-						<span class="txt1">
-							Forgot
-						</span>
-						<a class="txt2" href="#">
-							Username / Password?
-						</a>
-					</div>
+					
 
 					<div class="text-center p-t-13">
-						<a class="txt2" href="Signup.php">
-							Create your Account
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						<a class="txt2" href="login.php">
+							Have an account? 
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true">  Login</i>
 						</a>
 					</div>
 				</form>
