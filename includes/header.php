@@ -20,22 +20,44 @@ session_start();
 			<div class="collapse navbar-collapse" id="menu">
 				<ul class="nav navbar-nav">
 						<li class="active"><a href="index.php">Home</a></li>
-						<li><a href="#">About - us</a></li>
-						<li><a href="typography.html">Requirements</a></li>
-						<li><a href="contact.html">Contact</a></li>
+						
+						
+						
+						
 
+						<?php
+
+							if(isset($_SESSION['Id']))
+							{
+
+						?>	
+						<li><a href="contact.html">Requirements</a></li>
+						<li><a href="index.php">Request Id</a></li>
+						<li><a href="index.php">Dashboard</a></li>
+						
+						<li><a href="profile.php" target="_blank" rel="noopener noreferrer">My profile</a></li>
+						<li><a href="includes/logout.man.php">Logout</a></li>
+						
 						<!--/.login -->
 						<?php
-						if($pagename == "Login" or $pagename == "Signup")
-						{
-						}
-						else{
-						?>
-						<li> <a href="login.php">Login</a>
-						<li> <a href="Signup.php">Signup</a>
-						<?php
-						//echo($pagename);
-						}
+						}else{
+							?><li><a href="contact.html">Requirements</a></li>
+							<li><a href="index.php">About-us</a></li>
+							<?php
+							if($pagename == "Login" or $pagename == "Signup")
+							{
+							}
+							else{
+							?>
+							
+							<li> <a href="login.php">Login</a>
+							<li> <a href="Signup.php">Signup</a>
+
+							
+							<?php
+							//echo($pagename);
+							}
+							}
 
 						?>
 
