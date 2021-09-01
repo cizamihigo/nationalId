@@ -1,3 +1,7 @@
+<?php	
+session_start();
+?>
+
 <div class="header" id="home">
 		<div class="content white">
 			<nav class="navbar navbar-default" role="navigation">
@@ -39,6 +43,7 @@
 			</div>
 				<!--/.navbar-collapse-->
 				<!--/.navbar-->
+			</div>
 			</div>
 			</nav>
 		</div>
