@@ -65,53 +65,7 @@ html, body{
           float: left;
           margin-left: 11em;
       }
-      .social-icons{
-          float:right;
-          margin:1.1em 0 0;
-      }
-      .social-icons ul li{
-          display:inline-block;
-      }
-      .social-icons ul li a.facebook{
-          background:url(../images/img-sp.png) no-repeat -10px -12px;
-          display:block;
-          width:30px;
-          height:30px;
-      }
-      .social-icons ul li a.facebook:hover{
-          background:url(../images/img-sp.png) no-repeat -62px -12px;
-          display:block;
-      }
-      .social-icons ul li a.p{
-          background:url(../images/img-sp.png) no-repeat -10px -52px;
-          display:block;
-          width:30px;
-          height:30px;
-      }
-      .social-icons ul li a.p:hover{
-          background:url(../images/img-sp.png) no-repeat -61px -52px;
-          display:block;
-      }
-      .social-icons ul li a.g{
-          background:url(../images/img-sp.png) no-repeat -10px -90px;
-          display:block;
-          width:30px;
-          height:30px;
-      }
-      .social-icons ul li a.g:hover{
-          background:url(../images/img-sp.png) no-repeat -61px -90px;
-          display:block;
-      }
-      .social-icons ul li a.twitter{
-          background:url(../images/img-sp.png) no-repeat -10px -128px;
-          display:block;
-          width:30px;
-          height:30px;
-      }
-      .social-icons ul li a.twitter:hover{
-          background:url(../images/img-sp.png) no-repeat -61px -128px;
-          display:block;
-      }
+     
       .content.title .back-to-article {
           position: absolute;
           bottom: -20px;
@@ -2166,9 +2120,7 @@ html, body{
       .navbar-default .navbar-nav>li>a {
           padding: 22px 8px;
       }
-      .social-icons {
-          margin: 0;
-      }
+     
       .banner-info {
           text-align: right;
           width: 80%;
@@ -2322,11 +2274,7 @@ html, body{
           padding: 0;
           background: #E8E8E8;
       }
-      .social-icons {
-          float: none;
-          text-align: center;
-          padding: 1em 0;
-      }
+     
   }
   @media (max-width:667px){
       .banner-info h3 {
