@@ -91,4 +91,8 @@
 	<script src="js/main.js"></script>
 
 </body>
+<?php
+include_once("includes/footer.php");
+
+?>
 <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
