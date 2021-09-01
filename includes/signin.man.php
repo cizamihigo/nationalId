@@ -38,7 +38,7 @@
                         $_SESSION['Email'] = $row['Email'];
                         $_SESSION['Type'] = $row['Type'];
 
-                        header("Location: ../index.php?Email=".$row['Email']."?t=".$_SESSION['Type']."?id=".$_SESSION['Id']."");
+                        header("Location: ../index.php");
 
 
 

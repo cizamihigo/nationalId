@@ -1,5 +1,5 @@
 <head>
-    <title>E-NationalID System  | Home :: final year project by ULK Students Louange and Makassa</title>
+    <title>E-NationalID System  | <?= $pagename?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="This application is all about a platform which may help all congolese citizen from all over the 

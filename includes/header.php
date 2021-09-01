@@ -19,7 +19,7 @@ session_start();
 		
 			<div class="collapse navbar-collapse" id="menu">
 				<ul class="nav navbar-nav">
-						<li class="active"><a href="index.php">Home</a></li>
+						<li class=""><a href="index.php">Home</a></li>
 						
 						
 						
