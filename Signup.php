@@ -40,7 +40,7 @@
 					<img src="images/2.gif" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" action="includes/signup.man.php" method = "POST">
 					<span class="login100-form-title">
 						Create your account
 					</span>
@@ -62,7 +62,7 @@
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" type= "submit" name= "submit">
 							Sign up
 						</button>
 					</div>
