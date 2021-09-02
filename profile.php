@@ -10,6 +10,16 @@
 <?php
     if(isset($_SESSION['Email']))
     {
+        include_once("includes/db.man.php");
+        $Id = $_SESSION['Id'];
+
+        $selq = "SELECT * FROM profile WHERE ConnectId = '$Id'";
+        $result = mysqli_query($conn, $selq);
+        $rescheck = mysqli_num_rows($result);
+                if($row = mysqli_fetch_assoc($result))
+                {
+                    
+               
 ?>
 <body class= "">
 
@@ -47,31 +57,31 @@
             </div>
 
             <div class="on" data-validate = "Password is required">
-               <label for=""> Full name:</label>
+               <label for=""> Full name:</label> <?= $row['Fullname']?>
             </div>
             <div class="on" data-validate = "Valid email is required: ex@abc.xyz">
-                <label for="">Date of Birth :</label>
+                <label for="">Date of Birth :</label> <?= $row['BirthDate']?>
             </div>
 
             <div class="on" data-validate = "Password is required">
-                <label for="">Age:</label>
+                <label for="">Age:</label> <?= $row['Age']?>
             </div>
             <div class="on" data-validate = "Password is required">
-                <label for="">Marital status:</label>
+                <label for="">Marital status:</label> <?= $row['Marital status']?>
             </div>
             <div class="on" data-validate = "Valid email is required: ex@abc.xyz">
-                <label for="">Address :</label>
+                <label for="">Address :</label> <?= $row['Address']?>
             </div>
 
             <div class="on" data-validate = "Password is required">
-                <label for="">Telephone:</label>
+                <label for="">Telephone:</label> <?= $row['Telephone']?>
             </div>
             <div class="on" data-validate = "Valid email is required: ex@abc.xyz">
-                <label for="">Gender :</label>
+                <label for="">Gender :</label> <?= $row['Gender']?>
             </div>
 
             <div class="on" data-validate = "Password is required">
-                <label for="">Citizenship:</label>
+                <label for="">Citizenship:</label> <?= $row['Citizenship']?>
             </div>
             
             <div class="" width="50%">
@@ -101,6 +111,7 @@ $('.js-tilt').tilt({
 
 <?php
     }
+}
     else{
         header("Location: index.php");
     }

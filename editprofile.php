@@ -53,6 +53,7 @@
                     <span class="login100-form-title">
 						Profile Edition
 					</span>
+                    <form class="login100-form validate-form" action="includes/editprof.php" method= "POST">
 				<div class="login100">
 				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<input class="input100" type="text" name="email" placeholder="Email" value="<?=$_SESSION['Email'];?>">
@@ -64,17 +65,14 @@
 						<input class="input100" type="date" name="dateofbirth" >
 					</div>
                     <div class="wrap-input100">
-                        <select name="" class="input100">
+                        <select name="maritalstatus" class="input100">
                              <option value="Married">Married</option>
                              <option value="Divorced">Divorced</option>
                              <option value="Single">Single</option>
                         </select>
                     </div>
                    
-				</div>
-
-				<form class="login100-form validate-form" action="includes/signin.man.php" method= "POST">
-					
+				</div>	
                     <div class="wrap-input100">
 						<input class="input100" type="text" name="address" placeholder= "Your Address" >
 					</div>
@@ -82,18 +80,11 @@
 						<input class="input100" type="text" name="Telephone" placeholder= "Your Phone number" >
 					</div>
                     <div class="wrap-input100">
-                        <select name="" class="input100">
+                        <select name="sex" class="input100">
                              <option value="Male">Male</option>
                              <option value="Female">Female</option>
                         </select>
-                    </div>
-
-
-                    <div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password(confirm or put new)">
-						
-					</div> 
-                        
+            </div>
 					</div>
                     <center>
                     <div class="onc">
