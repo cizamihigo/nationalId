@@ -7,7 +7,12 @@
 <?php
     if(isset($_SESSION['Email']))
     {
+?>
+    <form action="" method="post">
+        <input type="file" name="" id="">
+    </form>
 
+<?php
     }
     else{
         header("Location: index.php");
