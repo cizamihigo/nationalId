@@ -8,8 +8,15 @@
     if(isset($_SESSION['Email']))
     {
 ?>
-    <form action="" method="post">
-        <input type="file" name="" id="">
+    <form action="" method="post" id="frm-image-upload" action="confirmation.php" name ="formulaire" enctype ="multipart/form-data">
+        <div class="form-row">
+            <div>choose Image file:</div>
+            <div>
+                <input type="file" class="file-input" name="Photopass" id="">
+            </div>
+        </div>
+
+    <input type="file" name="" id="">
     </form>
 
 <?php
