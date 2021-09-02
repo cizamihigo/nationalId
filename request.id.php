@@ -8,16 +8,43 @@
     if(isset($_SESSION['Email']))
     {
 ?>
-    <form action="" method="post" id="frm-image-upload" action="confirmation.php" name ="formulaire" enctype ="multipart/form-data">
+<link href="css/styl.css" rel="stylesheet" type="text/css">
+    <body>
+        <br><br>
+        <center>
+        <h2>Please enter Your identification documents</h2>
+    <form id="frm-image-upload" action="index.php" name='img'
+        method="post" enctype="multipart/form-data">
         <div class="form-row">
-            <div>choose Image file:</div>
+            <div>Choose Passport Picture:</div>
             <div>
-                <input type="file" class="file-input" name="Photopass" id="">
+                <input type="file" class="file-input" name="ppic">
+            </div>
+        </div>
+        <div class="form-row">
+            <div>Choose Identification documents PDF:</div>
+            <div>
+                <input type="file" class="file-input" name="idpdf">
+            </div>
+        </div>
+        <div class="form-row">
+            <div>Choose signature picture:</div>
+            <div>
+                <input type="file" class="file-input" name="signpic">
             </div>
         </div>
 
-    <input type="file" name="" id="">
+        <div class="button-row">
+            <input type="submit" id="btn-submit" name="upload"
+                value="Upload">
+        </div>
     </form>
+        </center>
+    
+    <?php if(!empty($response)) { ?>
+    <div class="response <?php echo $response["type"]; ?>"><?php echo $response["message"]; ?></div>
+    <?php }?>
+</body>
 
 <?php
     }

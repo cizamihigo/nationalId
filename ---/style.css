@@ -1,0 +1,50 @@
+body{
+    font-family: Arial;
+    width: 550px;
+}
+#frm-image-upload{
+    padding: 0px;
+    background-color: lightblue;
+}
+
+.form-row {
+    padding: 20px;
+    border-top: #8aacb7 1px solid;
+}
+
+.button-row {
+    padding: 10px 20px;
+    border-top: #8aacb7 1px solid;
+}
+
+#btn-submit {
+    padding: 10px 40px;
+    background: #586e75;
+    border: #485c61 1px solid;
+    color: #FFF;
+    border-radius: 2px;
+}
+
+.file-input {
+    background: #FFF;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 2px;
+    border: #8aacb7 1px solid;
+}
+
+.response {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+.error {
+    background: #fdcdcd;
+    border: #ecc0c1 1px solid;
+}
+
+.success {
+    background: #c5f3c3;
+    border: #bbe6ba 1px solid;
+}
