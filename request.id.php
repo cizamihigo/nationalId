@@ -37,8 +37,14 @@
 <?php
 if (isset($_POST["upload"])) {
     // Get Image Dimension
-    $sql = "INSERT INTO request(ReqName, ReqDate, ConnectId, ReqStatus) VALUES('$Code', date('y-m-D'), $id, 'On going' )";
-    $result = mysqli_querry($conn, $sql);
+    $year = date('Y');
+    $month = date('m');
+    $day = date('d');
+    $var = $year."-". $month."-".$day;
+    //echo($var);
+    //echo($dat);
+    $sqli = "INSERT INTO request(ReqName, ReqDate, ConnectId, ReqStatus) VALUES('$code', '$var', '$id', 'Pending' )";
+    $result = mysqli_query($conn, $sqli);
     $fileinfo = @getimagesize($_FILES["ppic"]["tmp_name"]);
     $width = $fileinfo[0];
     $height = $fileinfo[1];
@@ -91,28 +97,7 @@ if (isset($_POST["upload"])) {
                 "type" => "success",
                 "message" => "Image uploaded successfully."
                 
-            );
-           
-                $sqlsearch = "SELECT * FROM request WHERE ConnectId = '$id' AND ReqName = '$code'";
-                $res= mysqli_querry($conn, $sqlsearch);
-                $rescheck = mysqli_num_rows($res);
-                if(rescheck < 1)
-                {
-                    echo("<script>alert('data not recorded. Please try later...')</script>");
-                    exit();
-                
-                }else
-                {
-                    if($row = mysqli_fetch_assoc($res))
-                    {
-                        //echo($row["Id"]);
-                        $Reqname = $row['Id'];
-                        $sq = "INSERT INTO file(FileName, Url, RequestId) VALUES('$name', $target, $Reqname )";
-                        $reult = mysqli_querry($conn, $sql);
-
-                    }
-                }
-                    
+            );                    
                 
         } else {
             $response = array(
@@ -157,32 +142,13 @@ if (isset($_POST["upload"])) {
     
      else { 
         $_FILES["idpdf"]["name"] = $code . ".pdf";
-        $namepdf = $_FILES["idpdf"]["name"];
-       $targetpdf = "request/" .  basename($name); ;
-        if (move_uploaded_file($_FILES["idpdf"]["tmp_name"], $targetpdf)) {
+        $name = $_FILES["idpdf"]["name"];
+       $target = "request/" .  basename($name); ;
+        if (move_uploaded_file($_FILES["idpdf"]["tmp_name"], $target)) {
             $response = array(
                 "type" => "success",
                 "message" => "Image uploaded successfully."
             );
-            $sqlsearch = "SELECT * FROM request WHERE ConnectId = '$id' AND ReqName = '$code'";
-                $res= mysqli_querry($conn, $sqlsearch);
-                $rescheck = mysqli_num_rows($res);
-                if(rescheck < 1)
-                {
-                    echo("<script>alert('data not recorded. Please try later...')</script>");
-                    exit();
-                
-                }else
-                {
-                    if($row = mysqli_fetch_assoc($res))
-                    {
-                        //echo($row["Id"]);
-                        $Reqname = $row['Id'];
-                        $sq = "INSERT INTO file(FileName, Url, RequestId) VALUES('$namepdf', $targetpdf, $Reqname )";
-                        $reult = mysqli_querry($conn, $sql);
-
-                    }
-                }
         } else {
             $response = array(
                 "type" => "error",
@@ -216,7 +182,7 @@ if (isset($_POST["upload"])) {
        
         <div class="button-row">
             <input type="submit" id="btn-submit" name="upload"
-                value="Upload">
+                value="SEND REQUEST">
         </div>
     </form>
         </center>
