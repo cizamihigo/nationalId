@@ -32,7 +32,7 @@ session_start();
 
 						?>	
 						<li><a href="contact.html">Requirements</a></li>
-						<li><a href="index.php">Request Id</a></li>
+						<li><a href="request.id.php">Request Id</a></li>
 						<li><a href="index.php">Dashboard</a></li>
 						
 						<li><a href="profile.php" target="_blank" rel="noopener noreferrer">My profile</a></li>
