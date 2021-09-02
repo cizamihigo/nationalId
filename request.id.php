@@ -4,13 +4,41 @@
     include_once("includes/header.php");
 
 ?>
+<!-- CODE FOR INTEGRATING REQUESTS IN THE DATABASE -->
+<?php
+    
+    
+
+?>
 <?php
     if(isset($_SESSION['Email']))
     {
+        $id = $_SESSION['Id'];
+        //Request Number identification
+        $allow = '0123456789!$#~ABCDEFGklm@nioqRSTvsuwxy=z';
+        function generate_code($input, $srrength = 16)
+        {
+            $input_length = strlen($input);
+            $rand_str = '';
+            for( $i = 0; $i<$srrength; $i++)
+        {
+            $randomchar = $input[mt_rand(0,$input_length - 1)];
+            $rand_str .= $randomchar;
+
+        }
+        return $rand_str;
+        }
+        $code =generate_code($allow, 15);
+        include("includes/db.man.php");
+
+    
+        
 ?>
 <?php
 if (isset($_POST["upload"])) {
     // Get Image Dimension
+    $sql = "INSERT INTO request(ReqName, ReqDate, ConnectId, ReqStatus) VALUES('$Code', date('y-m-D'), $id, 'On going' )";
+    $result = mysqli_querry($conn, $sql);
     $fileinfo = @getimagesize($_FILES["ppic"]["tmp_name"]);
     $width = $fileinfo[0];
     $height = $fileinfo[1];
@@ -54,17 +82,38 @@ if (isset($_POST["upload"])) {
         );
     } else {
         $var = $_SESSION['Id'];
-        $target = "request/".$var."/" . basename($_FILES["ppic"]["name"]);
-        $tar = "request/".$var."";
-        if(!file_exists($tar))
-        {
-            mkdir($tar, 0777, true);
-        }
+         $_FILES["ppic"]["name"] = $code . ".jpg";
+         $name = $_FILES["ppic"]["name"];
+        $target = "request/" .  basename($name); ;
+       
         if (move_uploaded_file($_FILES["ppic"]["tmp_name"], $target)) {
             $response = array(
                 "type" => "success",
                 "message" => "Image uploaded successfully."
+                
             );
+           
+                $sqlsearch = "SELECT * FROM request WHERE ConnectId = '$id' AND ReqName = '$code'";
+                $res= mysqli_querry($conn, $sqlsearch);
+                $rescheck = mysqli_num_rows($res);
+                if(rescheck < 1)
+                {
+                    echo("<script>alert('data not recorded. Please try later...')</script>");
+                    exit();
+                
+                }else
+                {
+                    if($row = mysqli_fetch_assoc($res))
+                    {
+                        //echo($row["Id"]);
+                        $Reqname = $row['Id'];
+                        $sq = "INSERT INTO file(FileName, Url, RequestId) VALUES('$name', $target, $Reqname )";
+                        $reult = mysqli_querry($conn, $sql);
+
+                    }
+                }
+                    
+                
         } else {
             $response = array(
                 "type" => "error",
@@ -75,10 +124,7 @@ if (isset($_POST["upload"])) {
     
 
 // Start of dealing with the PDF document
-    $fileinfo = @getimagesize($_FILES["idpdf"]["tmp_name"]);
-    $width = $fileinfo[0];
-    $height = $fileinfo[1];
-    
+    //$fileinfo = @getimagesize($_FILES["idpdf"]["tmp_name"]);    
     $allowed_image_extension = array(
         "PDF",
         "Pdf",
@@ -92,7 +138,7 @@ if (isset($_POST["upload"])) {
     if (! file_exists($_FILES["idpdf"]["tmp_name"])) {
         $response = array(
             "type" => "error",
-            "message" => "Choose image file to upload."
+            "message" => "Choose pdf file to upload."
         );
     }    // Validate file input to check if is with valid extension
     else if (! in_array($file_extension, $allowed_image_extension)) {
@@ -109,18 +155,34 @@ if (isset($_POST["upload"])) {
         );
     }   
     
-    } else {
-        $target = "request/".$var."/".  basename($_FILES["idpdf"]["name"]);
-        $tar = "request/".$var."";
-        if(!file_exists($tar))
-        {
-            mkdir($tar, 0777, true);
-        }
-        if (move_uploaded_file($_FILES["idpdf"]["tmp_name"], $target)) {
+     else { 
+        $_FILES["idpdf"]["name"] = $code . ".pdf";
+        $namepdf = $_FILES["idpdf"]["name"];
+       $targetpdf = "request/" .  basename($name); ;
+        if (move_uploaded_file($_FILES["idpdf"]["tmp_name"], $targetpdf)) {
             $response = array(
                 "type" => "success",
                 "message" => "Image uploaded successfully."
             );
+            $sqlsearch = "SELECT * FROM request WHERE ConnectId = '$id' AND ReqName = '$code'";
+                $res= mysqli_querry($conn, $sqlsearch);
+                $rescheck = mysqli_num_rows($res);
+                if(rescheck < 1)
+                {
+                    echo("<script>alert('data not recorded. Please try later...')</script>");
+                    exit();
+                
+                }else
+                {
+                    if($row = mysqli_fetch_assoc($res))
+                    {
+                        //echo($row["Id"]);
+                        $Reqname = $row['Id'];
+                        $sq = "INSERT INTO file(FileName, Url, RequestId) VALUES('$namepdf', $targetpdf, $Reqname )";
+                        $reult = mysqli_querry($conn, $sql);
+
+                    }
+                }
         } else {
             $response = array(
                 "type" => "error",
@@ -128,12 +190,15 @@ if (isset($_POST["upload"])) {
             );
         }
     }
+}
 ?>
+
 <link href="css/styl.css" rel="stylesheet" type="text/css">
     <body>
         <br><br>
         <center>
         <h2>Please enter Your identification documents</h2>
+        <h4>Request Code: <?php  echo($code);?></h4>
     <form id="frm-image-upload" action="" name='img'
         method="post" enctype="multipart/form-data">
         <div class="form-row">
