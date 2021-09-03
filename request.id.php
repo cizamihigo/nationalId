@@ -164,6 +164,7 @@ if (isset($_POST["upload"])) {
         <br><br>
         <center>
         <h2>Please enter Your identification documents</h2>
+        <br>
         <h4>Request Code: <?php  echo($code);?></h4>
     <form id="frm-image-upload" action="" name='img'
         method="post" enctype="multipart/form-data">
