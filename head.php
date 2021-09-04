@@ -15,8 +15,6 @@
     <script type="text/javascript" src="js/easing.js"></script>
     <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
     <!--/script-->
-    <link href='//fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700' rel='stylesheet' type='text/css'>
     <script type="text/javascript">
                 jQuery(document).ready(function($) {
                     $(".scroll").click(function(event){		
