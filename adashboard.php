@@ -21,7 +21,7 @@ else{
      $projects = array();
      $joule = $_SESSION['Id'];
      // fetch data from the database
-     $seql = "SELECT * FROM request WHERE ConnectId = $joule";
+     $seql = "SELECT * FROM request WHERE ReqStatus = 'Pending' ORDER  BY  ReqDate DESC";
      $records = mysqli_query($conn, $seql);
 ?>
 <!DOCTYPE html>
@@ -133,7 +133,7 @@ else{
                             <div>
                               <p class="font-semibold"><?= $project['ReqName'];?></p>
                               <p class="text-xs text-gray-600 dark:text-gray-400">
-                                <?= $_SESSION["Email"];?>
+                                User request <?= $project['ConnectId'];?>
                               </p>
                             </div>
                           </div>
@@ -158,18 +158,12 @@ else{
                           {
                             ?>
                           <span
-                            class="px-2 py-1 font-semibold leading-tight text-orange-700 bg-orange-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                            class="px-2 py-1 font-semibold leading-tight text-blue-700 bg-blue-100 rounded-full dark:bg-green-700 dark:text-green-100"
                           >
                             Pending
                           </span>
 
                           <?php
-                          }
-                          elseif($st == "Cancelled")
-                          {
-                            ?>
-                              hihihihihihihi
-                            <?php
                           }
                           
                           ?>
@@ -182,20 +176,13 @@ else{
                             <button>View/ Print </button>
                           <?php
                             }
-                            elseif ($st == "Cancelled") {
-                              # code...
-                              ?>
-                             Cancelled because you didn't fullfill the requirements.<br> try again later!!!! Good Luck. Hope to see your application soon
-
-                              <?php
-                            }
                             else{
                               ?>
-                              <button>Your request is still on going. Wait for the Admin to confirm you</button>
-                              <?php
+                              <a href= "includes/approve.php?approve=<?=$project['Id'];?>&userId=<?= $project['ConnectId'] ?>"><button class ="px-4 py-2 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">Approve</button>
+                            </a><?php
                             }
                           ?></td> <td>
-                           <a>DELETE</a>
+                           <a href="includes/cancel.php?cancel=<?=$project['Id'];?>">Cancel</a>
                         </td>
                        
                       </tr>
@@ -212,7 +199,7 @@ else{
                 class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800"
               >
                 <span class="flex items-center col-span-3">
-                  Showing Your Requests
+                  Pending user requests
                 </span>
                 <span class="col-span-2"></span>
                 

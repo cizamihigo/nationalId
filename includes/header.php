@@ -27,7 +27,7 @@ session_start();
 
 						<?php
 
-							if(isset($_SESSION['Id']))
+							if(isset($_SESSION['Id']) && $_SESSION["Type"] ==1)
 							{
 
 						?>	
@@ -40,7 +40,17 @@ session_start();
 						
 						<!--/.login -->
 						<?php
-						}else{
+						}
+						elseif(isset($_SESSION['Id']) && $_SESSION["Type"] ==2){
+						?>
+						<li><a href="contact.html">Users</a></li>
+						<li><a href="request.id.php">Admins</a></li>
+						<li><a href="adashboard.php">Dashboard</a></li>
+						
+						<li><a href="profile.php">My profile</a></li>
+						<li><a href="includes/logout.man.php">Logout</a></li>
+
+						<?php }else{
 							?><li><a href="contact.html">Requirements</a></li>
 							<li><a href="index.php">About-us</a></li>
 							<?php
