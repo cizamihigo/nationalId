@@ -199,7 +199,7 @@ else{
                               <?php
                             }
                           ?></td> <td>
-                           <a>DELETE</a>
+                           <a href="includes/delreq.php?reqid=<?= $project['Id'];?>">DELETE</a>
                         </td>
                        
                       </tr>

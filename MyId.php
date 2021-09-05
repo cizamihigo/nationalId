@@ -137,7 +137,7 @@ $sss = mysqli_fetch_assoc($ss);
                             ?>
 					    <img src="<?php echo("images/1.gif")?>" alt="contry" width= "10%">
 						National Identity card 
-                        <img src="<?php echo("request/$imgname")?>" alt="IMG" width = "5%">                        
+                        <img src="<?php echo("request/$imgname")?>" alt="image" width = "5%">                        
 					</span>
                     <span class="login100" style="font-size: 30px; align-items: center;">
                         <center>  
