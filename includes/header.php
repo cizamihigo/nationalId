@@ -31,7 +31,7 @@ session_start();
 							{
 
 						?>	
-						<li><a href="contact.html">Requirements</a></li>
+						<li><a href="requirement.php">Requirements</a></li>
 						<li><a href="request.id.php">Request Id</a></li>
 						<li><a href="udashboard.php">Dashboard</a></li>
 						
@@ -51,8 +51,8 @@ session_start();
 						<li><a href="includes/logout.man.php">Logout</a></li>
 
 						<?php }else{
-							?><li><a href="contact.html">Requirements</a></li>
-							<li><a href="index.php">About-us</a></li>
+							?><li><a href="requirement.php">Requirements</a></li>
+							<li><a href="aboutus.php">About-us</a></li>
 							<?php
 							if($pagename == "Login" or $pagename == "Signup")
 							{

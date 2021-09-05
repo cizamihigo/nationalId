@@ -1,5 +1,5 @@
 <?php
-    $pagename = "Requirements";
+    $pagename = "About-us";
     include('head.php');
     include("includes/header.php");
 
