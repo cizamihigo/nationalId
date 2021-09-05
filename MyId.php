@@ -18,6 +18,13 @@ $sss = mysqli_fetch_assoc($ss);
     include("includes/header.php");
   
 ?>
+<?php
+    $sp = $sss['Profileid'];
+    $pro = "SELECT * FROM profile WHERE Id = '$sp'  ";
+    $exc = mysqli_query($conn, $pro);
+    $varid = mysqli_fetch_assoc($exc);
+
+    ?>
 <body class= "">
 
 	
@@ -113,7 +120,7 @@ $sss = mysqli_fetch_assoc($ss);
                     <td>
                     <button class = "pbtn" onclick="printContent('printId')"> Print your Id card</button>
                     <td><td>
-                    <button class = "pbtn" style="color: white"> Request Qrcode Instead</button>
+                    <a href="citizenQr.php?Id=<?=$sss['IdNumber']?>&fname= <?= $varid['Fullname'] ?>"><button class = "pbtn" style="color: white"> Request Qrcode Instead</button></a>
                     <td>
 
                 </tr>
@@ -137,13 +144,7 @@ $sss = mysqli_fetch_assoc($ss);
                             ID number: <u><?= $sss['IdNumber']?></u>
                         </center>
                     </span>
-                        <?php
-                        $sp = $sss['Profileid'];
-                        $pro = "SELECT * FROM profile WHERE Id = '$sp'  ";
-                        $exc = mysqli_query($conn, $pro);
-                        $varid = mysqli_fetch_assoc($exc);
-
-                        ?>
+                        
 					<div class="wrap-input100 validate-input" style="margin-left:10%">
 						<label>Name: </label> <?= $varid['Fullname'] ?> <br>
                         <label> Date of Birth:</label> <?= $varid['BirthDate'] ?> <br>
