@@ -5,6 +5,7 @@ if(isset($_GET['View']) && !empty($_GET['View']))
     $rek =$_GET['View'];
 $s ="SELECT * FROM idnumbers WHERE ReqName = '$rek' AND Valid = 1";
 $ss = mysqli_query($conn, $s);
+$sss = mysqli_fetch_assoc($ss);
 //IdNumber
 ?>
 
@@ -127,20 +128,31 @@ $ss = mysqli_query($conn, $s);
                 <span class="login100-form-title"> <?php
                             $imgname = $rek . ".jpg";
                             ?>
-					    <img src="<?php echo("images/1.gif")?>" alt="contry" width= "15%">
-						National Identity card
-                        <img src="<?php echo("request/$imgname")?>" alt="IMG" width = "20%">                        
+					    <img src="<?php echo("images/1.gif")?>" alt="contry" width= "10%">
+						National Identity card 
+                        <img src="<?php echo("request/$imgname")?>" alt="IMG" width = "5%">                        
 					</span>
+                    <span class="login100" style="font-size: 30px; align-items: center;">
+                        <center>  
+                            ID number: <u><?= $sss['IdNumber']?></u>
+                        </center>
+                    </span>
+                        <?php
+                        $sp = $sss['Profileid'];
+                        $pro = "SELECT * FROM profile WHERE Id = '$sp'  ";
+                        $exc = mysqli_query($conn, $pro);
+                        $varid = mysqli_fetch_assoc($exc);
 
+                        ?>
 					<div class="wrap-input100 validate-input" style="margin-left:10%">
-						<label>Name: </label> <br>
-                        <label> Date of Birth:</label> <br>
-                        <label>Age: </label> <br>
-                        <label> Address:</label> <br>
-                        <label>Telephone/email: </label> 
-                        <label> Gender:</label> <br>
-                        <label>Marital Status: </label> <br>
-                        <label> Citizenship:</label> <br>
+						<label>Name: </label> <?= $varid['Fullname'] ?> <br>
+                        <label> Date of Birth:</label> <?= $varid['BirthDate'] ?> <br>
+                        <label>Age: </label><?= $varid['Age'] ?> <br>
+                        <label> Address:</label> <?= $varid['Address'] ?> <br>
+                        <label>Telephone/email: </label>  <?= $varid['Telephone'] ?>, <?= $varid['Email'] ?> <br>
+                        <label> Gender:</label>  <?= $varid['Gender'] ?><br>
+                        <label>Marital Status: </label> <?= $varid['Marital status'] ?><br>
+                        <label> Citizenship:</label><?= $varid['Citizenship'] ?> <br>
 					</div>
                     
 
@@ -148,8 +160,8 @@ $ss = mysqli_query($conn, $s);
 						<span class="txt1">
 							issued by the national Identification committee of the Democratic Republic of Congo. (c) All rights reserved
 						</span>
-						<a class="txt2" href="#">
-							<br> this is to Testify that <?php echo("");?> is a Congolese
+						<a class="txt2" href="profile.php">
+							<br> this is to Testify that <?= $varid['Fullname'] ?> is a Congolese
 						</a>
 					</div>
                   
