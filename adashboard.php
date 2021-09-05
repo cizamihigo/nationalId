@@ -178,7 +178,7 @@ else{
                             }
                             else{
                               ?>
-                              <a href= "includes/approve.php?approve=<?=$project['Id'];?>&userId=<?= $project['ConnectId'] ?>"><button class ="px-4 py-2 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">Approve</button>
+                              <a href= "includes/approve.php?approve=<?=$project['Id'];?>&userId=<?= $project['ConnectId'] ?>&Rqname=<?= $project['ReqName'];?>"><button class ="px-4 py-2 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">Approve</button>
                             </a><?php
                             }
                           ?></td> <td>

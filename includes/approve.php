@@ -4,6 +4,7 @@
         include("db.man.php");
         $conid = (int) ($_GET['userId']);
         $reqId = (int) ($_GET['approve']);
+        $rqName = $_GET['Rqname'];
         $fetchprofile = "SELECT * FROM profile WHERE ConnectId = '$conid'";
         $profres = mysqli_query($conn, $fetchprofile);
 
@@ -32,7 +33,7 @@
         $idnnumber =generate_code($allow, 16);
         //print($idnnumber);
         
-        $ins = "INSERT INTO idnumbers(IdNumber, Profileid, Valid) VALUES('$idnnumber', '$uprofileId', '$valid')";
+        $ins = "INSERT INTO idnumbers(IdNumber, Profileid, Valid, ReqName) VALUES('$idnnumber', '$uprofileId', '$valid', '$rqName')";
         $insq = mysqli_query($conn, $ins);
         if($insq)
         {

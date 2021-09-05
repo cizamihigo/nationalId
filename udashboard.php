@@ -168,7 +168,11 @@ else{
                           elseif($st == "Cancelled")
                           {
                             ?>
-                              hihihihihihihi
+                             <span
+                            class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                          >
+                            Cancelled
+                          </span>
                             <?php
                           }
                           
@@ -179,7 +183,7 @@ else{
                             if($st == "Approved")
                             {
                               ?>
-                            <button>View/ Print </button>
+                            <a href="MyId.php?View<?= $project['ReqName'];?>"><button>View/ Print </button></a>
                           <?php
                             }
                             elseif ($st == "Cancelled") {
