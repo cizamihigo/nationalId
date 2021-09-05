@@ -54,8 +54,8 @@ $ss = mysqli_query($conn, $s);
                     color: #ff0f;
                     text-transform: Lowercase;
 
-                    width: 20%;
-                    height: 25px;
+                    width: 100%;
+                    height: 30px;
                     border-radius: 25px;
                     background: blue;
                     display: -webkit-box;
@@ -63,8 +63,8 @@ $ss = mysqli_query($conn, $s);
                     display: -moz-box;
                     display: -ms-flexbox;
                     display: flex;
-                    justify-content: right;
-                    align-items: right;
+                    justify-content: center;
+                    align-items: center;
                     padding: 0 25px;
 
                     -webkit-transition: all 0.4s;
@@ -72,13 +72,58 @@ $ss = mysqli_query($conn, $s);
                     -moz-transition: all 0.4s;
                     transition: all 0.4s;
 
-                    margin-left: 80%;
+                    margin-left: 10%;
                 }
 			</style>
-            <button class = "pbtn"> Print your Id</button>
+
+                   <script type="text/javascript">
+                    
+                    function printContent(id){
+                    str=document.getElementById(id).innerHTML
+                    newwin=window.open('','printwin','left=100,top=100,width=400,height=400')
+                    newwin.document.write('<HTML><head><link rel =\"stylesheet\" type=\"text/css\"href=\"css/main.css\"/>')
+                    newwin.document.write('<head><link rel=\"stylesheet\" type=\"text/css\" href=\"css/bootstrap-3.1.1.min.css\"/>')
+                    newwin.document.write('<HTML>\n<HEAD>\n')
+                    newwin.document.write('<TITLE>Print Page</TITLE>\n')
+                    newwin.document.write('<script>\n')
+                    newwin.document.write('function chkstate(){\n')
+                    newwin.document.write('if(document.readyState=="complete"){\n')
+                    newwin.document.write('window.close()\n')
+                    newwin.document.write('}\n')
+                    newwin.document.write('else{\n')
+                    newwin.document.write('setTimeout("chkstate()",2000)\n')
+                    newwin.document.write('}\n')
+                    newwin.document.write('}\n')
+                    newwin.document.write('function print_win(){\n')
+                    newwin.document.write('window.print();\n')
+                    newwin.document.write('chkstate();\n')
+                    newwin.document.write('}\n')
+                    newwin.document.write('<\/script>\n')
+                    newwin.document.write('</HEAD>\n')
+                    newwin.document.write('<BODY onload="print_win()">\n')
+                    newwin.document.write(str)
+                    newwin.document.write('</BODY>\n')
+                    newwin.document.write('</HTML>\n')
+                    newwin.document.close()
+                    }
+                    </script>  
+            <table>
+                <tr>
+                    <td>
+                    <button class = "pbtn" onclick="printContent('printId')"> Print your Id card</button>
+                    <td><td>
+                    <button class = "pbtn" style="color: white"> Request Qrcode Instead</button>
+                    <td>
+
+                </tr>
+
+            </table>
+
+            
+            
             
 			<div class="wrap-login100 on">
-				<form class="login100-form validate-form off" action="includes/signin.man.php" method= "POST">
+				<form class="login100-form validate-form off" id= "printId" action="includes/signin.man.php" method= "POST">
                 <span class="login100-form-title"> <?php
                             $imgname = $rek . ".jpg";
                             ?>
