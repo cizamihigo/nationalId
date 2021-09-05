@@ -183,7 +183,7 @@ else{
                             if($st == "Approved")
                             {
                               ?>
-                            <a href="MyId.php?View<?= $project['ReqName'];?>"><button>View/ Print </button></a>
+                            <a href="MyId.php?View=<?= $project['ReqName'];?>"><button>View/ Print </button></a>
                           <?php
                             }
                             elseif ($st == "Cancelled") {
