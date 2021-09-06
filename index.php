@@ -72,30 +72,30 @@
         <h3 class="tittle bottom"><i class="glyphicon glyphicon-globe"></i>About the Authors</h3>
         <div class="grid">
             <div class="col-md-6 m-b">
-            <a href="single.html"> <figure class="effect-layla"></a>
+            <a href="aboutus.php"> <figure class="effect-layla"></a>
                 <img src="images/manasse.jpg" alt="img25"/>
                 <figcaption>
                     <h4>KAZUZA MWENELWATA MANASSE <span>Programmer </span></h4>
                 </figcaption>			
                 </figure>
                 <div class="m-b-text">
-                    <a href="single.html" class="wd">My purpose after here is to become a Network Administrator </a>
+                    <a href="aboutus.php" class="wd">My purpose after here is to become a Network Administrator </a>
                     <p>Am a passionate of computer networking systems. I would like to get in touch with computer networks and help provide a better future for coming generations ...</p>
-                    <a class="read" href="single.html">Read More</a>
+                    <a class="read" href="aboutus.php">Read More</a>
                 </div>
                 
             </div>
             <div class="col-md-6 m-b">
                 <figure class="effect-layla">
-            <a href="single.html">	<img src="images/louange.jpg" alt="img25"/></a>
+            <a href="aboutus.php">	<img src="images/louange.jpg" alt="img25"/></a>
                 <figcaption>
                     <h4>MAHIKITO KAVUGHO Louange<span>Programmer and researcher</span></h4>
                 </figcaption>			
                 </figure>
                 <div class="m-b-text">
-                    <a href="single.html" class="wd">I dream to continue my journey in the field of research </a>
+                    <a href="aboutus.php" class="wd">I dream to continue my journey in the field of research </a>
                     <p>I want to be among the tomorrow innovators. the creator of the Africa of tomorrow through Computer science ... <br></p>
-                    <a class="read" href="single.html">Read More</a>
+                    <a class="read" href="aboutus.php">Read More</a>
                 </div>
             </div>
     </div>

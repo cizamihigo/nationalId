@@ -5,32 +5,50 @@
 ?>
 <div class="contact">
 		<div class="container">
-			<h3>How To Find Us</h3>
-			<div class="contact-bottom">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2564.958900464012!2d36.23097800000001!3d49.993379999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a0f009ab9f07%3A0xa21e10f67fa29ce!2sGeorgia+Education+Center!5e0!3m2!1sen!2sin!4v1436943860334" frameborder="0" style="border:0" allowfullscreen></iframe>
-			</div>
+			
 			<div class="col-md-4 contact-left">
 				<h4>Address</h4>
-				<p>est eligendi optio cumque nihil impedit quo minus id quod maxime
-					<span>26 56D Rescue,US</span></p>
+				<p>We are located in Republic democratic of Congo, east of the country
+					<span>56D Av. Bibo,Bukavu</span></p>
 				<ul>
-					<li>Free Phone :+1 078 4589 2456</li>
-					<li>Telephone :+1 078 4589 2456</li>
-					<li>Fax :+1 078 4589 2456</li>
-					<li><a href="mailto:info@example.com">info@example.com</a></li>
+					<li>Office Phone :+250 78 2658 377</li>
+					<li>Telephone :+250  78 6223 339</li>
+					<li>Whatsapp :+243  78 4589 256</li>
+					<li><a href="mailto:villor951@gmail.com">info@natid.gov.cd</a></li>
 				</ul>
 			</div>
 			<div class="col-md-8 contact-left">
-				<h4>Contact Form</h4>
-				<form>
-					<input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-					<input type="email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-					<input type="text" value="Telephone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Telephone';}" required="">
-					<textarea type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
-					<input type="submit" value="Submit" >
-					<input type="reset" value="Clear" >
-
-				</form>
+				<h4>Author Biography</h4>
+                <div class="">
+        <div class="grid">
+            <div class="col-md-6 m-b">
+             <figure class="effect-layla">
+                <img src="images/manasse.jpg" alt="img25"/>
+                <figcaption>
+                    <h4>KAZUZA MWENELWATA MANASSE <span>Programmer </span></h4>
+                </figcaption>			
+                </figure>
+                <div class="m-b-text">
+                    System Analyst and Backend developer 
+                    <p>Am a passionate of computer networking systems. I would like to get in touch with computer networks and help provide a better future for coming generations ...</p>
+                    
+                </div>
+                
+            </div>
+            <div class="col-md-6 m-b">
+                <figure class="effect-layla">
+            	<img src="images/louange.jpg" alt="img25"/>
+                <figcaption>
+                    <h4>MAHIKITO KAVUGHO Louange<span>Programmer and researcher</span></h4>
+                </figcaption>			
+                </figure>
+                <div class="m-b-text">
+                    System designer and frontend designer 
+                    <p>I want to be among the tomorrow innovators. the creator of the Africa of tomorrow through Computer science ... <br></p>
+                    
+                </div>
+            </div>
+    </div>
 			</div>
 			<div class="clearfix"> </div>
 		</div>
