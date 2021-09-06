@@ -89,7 +89,7 @@ include("includes/db.man.php");
                           
                         </td>
                         <td class="px-4 py-3">
-                        <a href="includes/valid.php?prof=<?=$project['Id'];?>">Activate</a>
+                        <a href="includes/dup.clean.php?prof=<?=$project['Id'];?>">Disactivate</a>
                         </td>                       
                        
                       </tr>
