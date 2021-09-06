@@ -170,10 +170,10 @@ else{
                         </td>
                         <td class="px-4 py-3 text-sm">
                           <?php
-                            if($st == "Approved")
+                            if($st == "Approve")
                             {
                               ?>
-                            <button>View/ Print </button>
+                            <button>View </button>
                           <?php
                             }
                             else{

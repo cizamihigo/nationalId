@@ -43,8 +43,8 @@ session_start();
 						}
 						elseif(isset($_SESSION['Id']) && $_SESSION["Type"] ==2){
 						?>
-						<li><a href="contact.html">Users</a></li>
-						<li><a href="request.id.php">Admins</a></li>
+						<li><a href="users.php">Users</a></li>
+						<li><a href="Availlableid.php">Ids</a></li>
 						<li><a href="adashboard.php">Dashboard</a></li>
 						
 						<li><a href="profile.php">My profile</a></li>

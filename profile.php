@@ -111,8 +111,11 @@ $('.js-tilt').tilt({
 
 <?php
     }
-    echo("<p><br></p><br><p><br></p><br><p><br></p><p></p><center>You are not yet having a profile to show</center>");
+
+
+    echo("<p><br></p><br><p><br></p><br><p><br></p><p></p><center>You are not yet having a profile to show.<br/> Please <a href= 'editprofile.php'>create a profile</a></center>");
 }
+
     else{
         header("Location: index.php");
     }

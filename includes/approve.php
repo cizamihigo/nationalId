@@ -33,7 +33,7 @@
         $idnnumber =generate_code($allow, 16);
         //print($idnnumber);
         
-        $ins = "INSERT INTO idnumbers(IdNumber, Profileid, Valid, ReqName) VALUES('$idnnumber', '$uprofileId', '$valid', '$rqName')";
+        $ins = "INSERT INTO idnumbers(IdNumber, Profileid, Valid, ReqName, AddOn) VALUES('$idnnumber', '$uprofileId', '$valid', '$rqName', DEFAULT)";
         $insq = mysqli_query($conn, $ins);
         if($insq)
         {
