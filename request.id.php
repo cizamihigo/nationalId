@@ -147,12 +147,12 @@ if (isset($_POST["upload"])) {
         if (move_uploaded_file($_FILES["idpdf"]["tmp_name"], $target)) {
             $response = array(
                 "type" => "success",
-                "message" => "Image uploaded successfully."
+                "message" => "Files uploaded successfully."
             );
         } else {
             $response = array(
                 "type" => "error",
-                "message" => "Problem in uploading image files."
+                "message" => "Problem in uploading files files."
             );
         }
     }
